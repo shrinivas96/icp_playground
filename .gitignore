@@ -1,0 +1,4 @@
+.vscode/**
+icpVenv/**
+ext/**
+**/__pycache__/**
