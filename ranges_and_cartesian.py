@@ -78,8 +78,8 @@ def read_scans_write_points(fileToRead, saveFile):
 def main():
     # readFile = "data_add/simulatedScan_self.dat"
     # saveFile = 'data_add/points_from_self_sim_ranges.npz'
-    readFile = "data_add/confirming_large_distance.dat"
-    saveFile = 'data_add/confirming_large_distance.npz'
+    readFile = "data_add/logRealSimScanComparision.dat"
+    saveFile = 'writing_data/distortedRealSimScanComparision.npz'
 
     read_scans_write_points(readFile, saveFile)
 

@@ -49,25 +49,23 @@ def return_all_ranges(fileName):
     return np.array(ranges_arrays)
 
 
-def main():
+def get_in(readFile, rangesSaveFile, pointsSaveFile):
     # readFile = "data_add/simulatedScan_self.dat"
     # saveFile = 'data_add/points_from_self_sim_ranges.npz'
     
-    # readFile = 'data/scan_topic_dump.dat'
-    rangesSaveFile = 'data_add/all_ranges_jacked.npz'
-    pointsSaveFile = 'data_add/points_scan_dump.npz'
+    # readFile = 'writing_data/new_scan_doc.dat'
+    # rangesSaveFile = 'writing_data/ranges_new_scan_doc.npz'
+    # pointsSaveFile = 'writing_data/points_new_scan_doc.npz'
 
     # needs to be done only once
-    # all_ranges = return_all_ranges(readFile)
-    # np.savez(rangesSaveFile, all_ranges)
-
-    loadFile = np.load(rangesSaveFile)
-    all_ranges = loadFile['arr_0']
+    all_ranges = return_all_ranges(readFile)
     all_ranges = all_ranges.astype(np.float64)
-    point_4x1_array = combine_points(all_ranges)
+    np.savez(rangesSaveFile, all_ranges)
 
+    # loadFile = np.load(rangesSaveFile)
+    # all_ranges = loadFile['arr_0']
+    point_4x1_array = combine_points(all_ranges)
     np.savez(pointsSaveFile, point_4x1_array)
 
 if __name__ == '__main__':
-    main()
-    
+    pass
